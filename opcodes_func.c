@@ -36,7 +36,6 @@ void aupush(stack_t **stack_pointer, unsigned int num)
 		*stack_pointer = new_node;
 	else if (SQ)
 	{
-		/* Puts new node on top if not empty */
 		(*stack_pointer)->prev = new_node;
 		new_node->next = *stack_pointer;
 		*stack_pointer = new_node;
