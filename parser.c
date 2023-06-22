@@ -1,7 +1,5 @@
 #include "monty.h"
 
-instruction_t *auparser(char *line);
-
 /**
  * auparser - Parses a line and returns the corresponding instruction.
  * @line: The line to parse
@@ -30,37 +28,37 @@ instruction_t *auparser(char *line)
 	{
 		if (strcmp(instruction->opcode, "push") == 0)
 			instruction->f = aupush;
-		else if (strcmp(instruction->opcode, "pall") == 0)
+		if (strcmp(instruction->opcode, "pall") == 0)
 			instruction->f = aupall;
-		else if (strcmp(instruction->opcode, "pint") == 0)
+		if (strcmp(instruction->opcode, "pint") == 0)
 			instruction->f = aupint;
-		else if (strcmp(instruction->opcode, "pop") == 0)
+		if (strcmp(instruction->opcode, "pop") == 0)
 			instruction->f = aupop;
-		else if (strcmp(instruction->opcode, "swap") == 0)
+		if (strcmp(instruction->opcode, "swap") == 0)
 			instruction->f = auswap;
-		else if (strcmp(instruction->opcode, "add") == 0)
+		if (strcmp(instruction->opcode, "add") == 0)
 			instruction->f = stack_add;
-		else if (strcmp(instruction->opcode, "nop") == 0)
+		if (strcmp(instruction->opcode, "nop") == 0)
 			instruction->f = aunop;
-		else if (strcmp(instruction->opcode, "sub") == 0)
+		if (strcmp(instruction->opcode, "sub") == 0)
 			instruction->f = stack_sub;
-		else if (strcmp(instruction->opcode, "div") == 0)
+		if (strcmp(instruction->opcode, "div") == 0)
 			instruction->f = stack_div;
-		else if (strcmp(instruction->opcode, "mul") == 0)
+		if (strcmp(instruction->opcode, "mul") == 0)
 			instruction->f = stack_mul;
-		else if (strcmp(instruction->opcode, "mod") == 0)
+		if (strcmp(instruction->opcode, "mod") == 0)
 			instruction->f = aumod;
-		else if (strcmp(instruction->opcode, "pchar") == 0)
+		if (strcmp(instruction->opcode, "pchar") == 0)
 			instruction->f = aupchar;
-		else if (strcmp(instruction->opcode, "pstr") == 0)
+		if (strcmp(instruction->opcode, "pstr") == 0)
 			instruction->f = aupstr;
-		else if (strcmp(instruction->opcode, "rotl") == 0)
+		if (strcmp(instruction->opcode, "rotl") == 0)
 			instruction->f = aurotl;
-		else if (strcmp(instruction->opcode, "rotr") == 0)
+		if (strcmp(instruction->opcode, "rotr") == 0)
 			instruction->f = aurotr;
-		else if (strcmp(instruction->opcode, "stack") == 0)
+		if (strcmp(instruction->opcode, "stack") == 0)
 			instruction->f = austack;
-		else if (strcmp(instruction->opcode, "queue") == 0)
+		if (strcmp(instruction->opcode, "queue") == 0)
 			instruction->f = auqueue;
 	}
 
