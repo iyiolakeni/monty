@@ -10,19 +10,17 @@
 void aupchar(stack_t **stack_pointer, unsigned int num)
 {
 	/* Check if stack is empty */
-	if (*stack_pointer == NULL)
+	if ((*stack_pointer) == NULL)
 	{
 		fprintf(stdout, "L%d: can't pchar, stack empty\n", num);
 		exit(EXIT_FAILURE);
 	}
-
 	/* Check if the value is a printable character */
 	if (!isprint((*stack_pointer)->n))
 	{
 		fprintf(stdout, "L%d: can't pchar, value out of range\n", num);
 		exit(EXIT_FAILURE);
 	}
-
 	/* Print the character */
 	fprintf(stdout, "%c\n", (*stack_pointer)->n);
 }
@@ -51,7 +49,6 @@ void aupstr(stack_t **stack_pointer, unsigned int num)
 		printf("%c", temp->n);
 		temp = temp->next;
 	}
-
 	/* Print a new line at the end */
 	printf("\n");
 }
