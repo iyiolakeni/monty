@@ -11,7 +11,7 @@ void stack_add(stack_t **stack_pointer, unsigned int num)
 {
 	int add;
 
-	if (*stack_pointer == NULL || (*stack_pointer)->next == NULL)
+	if ((*stack_pointer) == NULL || (*stack_pointer)->next == NULL)
 	{
 		fprintf(stdout, "L%d: can't add, stack too short\n", num);
 		exit(EXIT_FAILURE);
@@ -39,7 +39,7 @@ void stack_div(stack_t **stack_pointer, unsigned int num)
 {
 	int division;
 
-	if (*stack_pointer == NULL || (*stack_pointer)->next == NULL)
+	if ((*stack_pointer) == NULL || (*stack_pointer)->next == NULL)
 	{
 		fprintf(stdout, "L%d: can't div, stack too short\n", num);
 		exit(EXIT_FAILURE);
@@ -74,17 +74,13 @@ int int_checker(char *str)
 
 	if (str == NULL)
 		return (0);
-
 	if (*str == '-')
 		index++;
-
-	while (str[index] != '\0')
+	for (; str[index]; index++)
 	{
 		if (!isdigit(str[index]))
 			return (0);
-		index++;
 	}
-
 	return (1);
 }
 
@@ -101,13 +97,13 @@ void stack_mul(stack_t **stack_pointer, unsigned int num)
 {
 	int result;
 
-	if (*stack_pointer == NULL || (*stack_pointer)->next == NULL)
+	if ((*stack_pointer) == NULL || (*stack_pointer)->next == NULL)
 	{
 		fprintf(stdout, "L%d: can't mul, stack too short\n", num);
 		exit(EXIT_FAILURE);
 	}
 
-	/* Perform multiplication of the top two elements */
+	/*Perform multiplication of the top two elements*/
 	result = (*stack_pointer)->next->n * (*stack_pointer)->n;
 
 	/* Remove the top element */
@@ -130,7 +126,7 @@ void stack_sub(stack_t **stack_pointer, unsigned int num)
 {
 	int difference;
 
-	if (*stack_pointer == NULL || (*stack_pointer)->next == NULL)
+	if ((*stack_pointer) == NULL || (*stack_pointer)->next == NULL)
 	{
 		fprintf(stdout, "L%d: can't sub, stack too short\n", num);
 		exit(EXIT_FAILURE);
