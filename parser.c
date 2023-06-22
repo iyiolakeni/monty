@@ -1,5 +1,7 @@
 #include "monty.h"
 
+instruction_t *auparser(char *line);
+
 /**
  * auparser - Parses a line and returns the corresponding instruction.
  * @line: The line to parse
