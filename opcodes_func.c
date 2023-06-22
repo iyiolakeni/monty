@@ -64,14 +64,14 @@ void aupall(stack_t **stack_pointer, unsigned int num)
 {
 	stack_t *current_node;
 
+	UNUSED(num);
 
 	current_node = *stack_pointer;
-	while (current_node)
+	while (current_node != NULL)
 	{
 		printf("%d\n", current_node->n);
 		current_node = current_node->next;
 	}
-	(void)num;
 }
 
 
@@ -84,12 +84,12 @@ void aupall(stack_t **stack_pointer, unsigned int num)
  */
 void aupint(stack_t **stack_pointer, unsigned int num)
 {
-	if ((*stack_pointer)->next == NULL)
+	if (*stack_pointer == NULL)
 	{
 		fprintf(stdout, "L%d: can't pint, stack empty\n", num);
 		exit(EXIT_FAILURE);
 	}
-	printf("%d\n", (*stack_pointer)->next->n);
+	printf("%d\n", (*stack_pointer)->n);
 }
 
 
@@ -104,17 +104,15 @@ void aupop(stack_t **stack_pointer, unsigned int num)
 {
 	stack_t *temp = NULL;
 
-	if ((*stack_pointer)->next == NULL)
+	if ((*stack_pointer) == NULL)
 	{
 		fprintf(stdout, "L%d: can't pop an empty stack\n", num);
 		exit(EXIT_FAILURE);
 	}
 
-	temp = (*stack_pointer)->next->next;
-	free((*stack_pointer)->next);
-	if (temp)
-		next->prev = *stack_pointer;
+	temp = (*stack_pointer);
 	*stack_pointer = (*stack_pointer)->next;
+	free(temp);
 }
 
 
