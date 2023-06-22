@@ -48,7 +48,6 @@ char *get_opcode(char *string)
 	 */
 
 	opcode = strtok(string, "\n\t ");
-
 	/*Return the extracted opcode*/
 	return (opcode);
 }
