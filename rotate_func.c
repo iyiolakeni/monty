@@ -43,7 +43,7 @@ void aurotl(stack_t **stack_pointer, unsigned int num)
  */
 void aurotr(stack_t **stack_pointer, unsigned int num)
 {
-	stack_t *current, *last_node;
+	stack_t *current;
 	int last_value;
 
 	/* Unused parameter */

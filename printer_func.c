@@ -48,7 +48,7 @@ void aupstr(stack_t **stack_pointer, unsigned int num)
 	/* Iterate through the stack and print the characters */
 	while (temp != NULL && temp->n != 0 && isprint(temp->n))
 	{
-		printf("%c", tmp->n);
+		printf("%c", temp->n);
 		temp = temp->next;
 	}
 

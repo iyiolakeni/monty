@@ -124,7 +124,7 @@ void aupop(stack_t **stack_pointer, unsigned int num)
  *
  * Return: void
  */
-void swap(stack_t **stack_pointer, unsigned int num)
+void auswap(stack_t **stack_pointer, unsigned int num)
 {
 	int temp;
 
